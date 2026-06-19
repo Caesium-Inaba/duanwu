@@ -5,6 +5,10 @@ img
 ## 二进制文件
 *.mat
 # *.pdf   # 不把pdf加ignore，防止latex重新编译
+*.xlsx
+*.docx
+
 
 ## python
 .venv
+
