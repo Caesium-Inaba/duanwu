@@ -6,6 +6,9 @@ diary('pro2.txt');
 load('dc.mat', 'data_clean');
 load('dkmeans.mat', 'idx', 'kOpt', 'centers_H', 'centers_C');
 
+outDir = fullfile('img', 'pro2');
+if ~exist(outDir, 'dir'), mkdir(outDir); end
+
 %% 变量定义（符号对齐论文统一符号表）
 predVars = {'Temp_C','C_in_gNm3','Q_Nm3h', ...
             'U1_kV','U2_kV','U3_kV','U4_kV', ...
@@ -37,6 +40,8 @@ for j = 1:kOpt
 end
 fprintf('\n');
 
+R_clusters = cell(kOpt, 1);  % 存储各工况 Spearman 矩阵
+
 for cluster = 1:kOpt
     mask = idx == cluster;
     X_cluster = X_all(mask, :);
@@ -54,6 +59,7 @@ for cluster = 1:kOpt
     end
 
     [R_spearman, P_spearman] = corr(X_cluster, 'type', 'Spearman');
+    R_clusters{cluster} = R_spearman;
 
     % 输出与 eta 的 Spearman rho（按 |rho| 降序）
     rhoWithEta = R_spearman(1:nPred, end);
@@ -73,8 +79,63 @@ for cluster = 1:kOpt
     writeCorrCSV(R_spearman, csvName, allSymbols);
     fprintf('  已导出 %s\n', csvName);
 
+    % 热力图
+    fig = figure('Name', sprintf('Spearman - 工况 %d (n=%d)', cluster, n));
+    imagesc(R_spearman);
+    colormap(jet); colorbar; caxis([-1 1]);
+    set(gca, 'XTick', 1:nVars, 'XTickLabel', allSymbols, ...
+             'YTick', 1:nVars, 'YTickLabel', allSymbols);
+    xtickangle(45);
+    axis equal tight;
+    for ii = 1:nVars
+        for jj = 1:nVars
+            if ii ~= jj
+                text(jj, ii, sprintf('%.2f', R_spearman(ii,jj)), ...
+                    'HorizontalAlignment', 'center', 'FontSize', 7);
+            end
+        end
+    end
+    saveCurrent(fig, sprintf('spearman_cluster%d', cluster), outDir);
+
     fprintf('\n');
 end
+
+%% 分工况 Spearman 汇总大图（2×2）
+%  第一排: 工况1(低温高尘)  工况4(高温高尘)
+%  第二排: 工况3(低温低尘)  工况2(高温低尘)
+gridMap = [1, 4; 3, 2];
+clusterLabel = {
+    sprintf('工况 1: 低温高尘 (n=%d)', sum(idx==1 & all(isfinite(X_all),2)));
+    sprintf('工况 2: 高温低尘 (n=%d)', sum(idx==2 & all(isfinite(X_all),2)));
+    sprintf('工况 3: 低温低尘 (n=%d)', sum(idx==3 & all(isfinite(X_all),2)));
+    sprintf('工况 4: 高温高尘 (n=%d)', sum(idx==4 & all(isfinite(X_all),2)));
+};
+
+figGrid = figure('Name', '分工况 Spearman 秩相关系数矩阵', ...
+    'Position', [50, 50, 1200, 900]);
+for row = 1:2
+    for col = 1:2
+        c = gridMap(row, col);
+        subplot(2, 2, (row-1)*2 + col);
+        R = R_clusters{c};
+        imagesc(R);
+        colormap(jet); colorbar; caxis([-1 1]);
+        set(gca, 'XTick', 1:nVars, 'XTickLabel', allSymbols, ...
+                 'YTick', 1:nVars, 'YTickLabel', allSymbols);
+        xtickangle(45);
+        axis equal tight;
+        title(clusterLabel{c}, 'FontSize', 10);
+        for ii = 1:nVars
+            for jj = 1:nVars
+                if ii ~= jj
+                    text(jj, ii, sprintf('%.2f', R(ii,jj)), ...
+                        'HorizontalAlignment', 'center', 'FontSize', 6);
+                end
+            end
+        end
+    end
+end
+saveCurrent(figGrid, 'spearman_grid', outDir);
 
 fprintf('显著性: *** p<0.001  ** p<0.01  * p<0.05  n.s. p>=0.05\n');
 diary off;

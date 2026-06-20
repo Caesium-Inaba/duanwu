@@ -1,6 +1,0 @@
-feature('HotLinks',0);cd('e:\cumcm\duanwu')
-feature('HotLinks',0);vars = who('-file', 'dkmeans.mat'); disp(vars);
-feature('HotLinks',0);cd('e:\cumcm\duanwu')
-feature('HotLinks',0);pro2
-feature('HotLinks',0);cd('e:\cumcm\duanwu')
-feature('HotLinks',0);pro2

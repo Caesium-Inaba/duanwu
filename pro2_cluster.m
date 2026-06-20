@@ -1,7 +1,7 @@
 %% 工况点聚类分析
 clear;clc;close all;
 
-outDir = fullfile('img', 'pro2_cluster');
+outDir = fullfile('img', 'pro2');
 if ~exist(outDir, 'dir')
     mkdir(outDir);
 end
@@ -19,7 +19,7 @@ allFigsExist = all(cellfun(@(n) isfile(fullfile(outDir, [n '.fig'])), figNames))
 if allFigsExist
     % 情况1：fig 已存在，直接打开
     openCachedFigs();
-    fprintf('从 img\\pro2_cluster\\ 加载已有图窗\n');
+    fprintf('从 img\\pro2\\ 加载已有图窗\n');
     load(cacheFile, 'kOpt', 'centers_H', 'centers_C');
 
 elseif isfile(cacheFile)
@@ -136,7 +136,7 @@ function plotClustered(H, C, idx, centers_H, centers_C, kOpt)
 end
 
 function saveCurrent(name)
-    outDir = fullfile('img', 'pro2_cluster');
+    outDir = fullfile('img', 'pro2');
     fig = gcf;
     saveas(fig, fullfile(outDir, [name '.svg']));
     saveas(fig, fullfile(outDir, [name '.png']));
@@ -144,7 +144,7 @@ function saveCurrent(name)
 end
 
 function openCachedFigs()
-    outDir = fullfile('img', 'pro2_cluster');
+    outDir = fullfile('img', 'pro2');
     openfig(fullfile(outDir, 'working_point_raw.fig'), 'visible');
     openfig(fullfile(outDir, 'elbow.fig'), 'visible');
     openfig(fullfile(outDir, 'silhouette.fig'), 'visible');

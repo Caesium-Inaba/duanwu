@@ -61,7 +61,8 @@ data_clean.eff = (data_clean.C_in_gNm3 - data_clean.C_out_mgNm3 / 1000) ...
 data_clean = removevars(data_clean, contains(data_clean.Properties.VariableNames, '_bad'));
 
 save('dc.mat', 'data_clean');
-fprintf('已保存 dc.mat，清洗后 %d 行\n', height(data_clean));
+writetable(data_clean, 'dc.csv');
+fprintf('已保存 dc.mat 和 dc.csv，清洗后 %d 行\n', height(data_clean));
 
 %% ===== 重新绘图，保存到 img\clean\ =====
 outDir = fullfile('img', 'clean');
@@ -92,3 +93,34 @@ for i = 1:numel(varNames_plot)
 end
 
 fprintf('图片已保存到 %s\n', outDir);
+
+%% ===== 诊断图：标出被删除的点及其删除原因 =====
+diagDir = fullfile('img', 'clean');
+t_orig = datetime(data.timestamp);
+
+for i = 1:nVar
+    bad_i = data.([varNames{i} '_bad']);        % 此变量导致的异常
+    bad_other = bad_any & ~bad_i;                % 其他变量导致异常、此变量正常
+    kept = ~bad_any;                             % 保留的点
+
+    fig = figure('Name', sprintf('清洗诊断 - %s', varNames{i}));
+    hold on;
+    h1 = scatter(t_orig(kept), data.(varNames{i})(kept), 2, 'filled', ...
+        'MarkerFaceColor', [0.7 0.7 0.7], 'DisplayName', '保留');
+    h2 = scatter(t_orig(bad_i), data.(varNames{i})(bad_i), 6, 'filled', ...
+        'MarkerFaceColor', [0.85 0.2 0.2], 'DisplayName', '此变量异常删除');
+    h3 = scatter(t_orig(bad_other), data.(varNames{i})(bad_other), 4, 'filled', ...
+        'MarkerFaceColor', [1.0 0.6 0.2], 'DisplayName', '他变量异常连带删除');
+    hold off;
+    xlabel('时间');
+    ylabel(varNames{i});
+    legend([h2, h3, h1], 'Location', 'best');
+    grid on;
+    xtickformat('MM-dd HH:mm');
+
+    saveas(fig, fullfile(diagDir, [varNames{i} '_diag.svg']));
+    saveas(fig, fullfile(diagDir, [varNames{i} '_diag.png']));
+    savefig(fig, fullfile(diagDir, [varNames{i} '_diag.fig']));
+end
+
+fprintf('诊断图已保存到 %s\n', diagDir);
