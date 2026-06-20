@@ -12,6 +12,8 @@ img
 *.docx
 *.pth
 *.pkl
+*.zip
+*.rar
 
 
 ## python

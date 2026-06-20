@@ -40,7 +40,8 @@ for j = 1:kOpt
 end
 fprintf('\n');
 
-R_clusters = cell(kOpt, 1);  % 存储各工况 Spearman 矩阵
+R_clusters = cell(kOpt, 1);  % 各工况 Spearman rho 矩阵
+P_clusters = cell(kOpt, 1);  % 各工况 p 值矩阵
 
 for cluster = 1:kOpt
     mask = idx == cluster;
@@ -60,6 +61,7 @@ for cluster = 1:kOpt
 
     [R_spearman, P_spearman] = corr(X_cluster, 'type', 'Spearman');
     R_clusters{cluster} = R_spearman;
+    P_clusters{cluster} = P_spearman;
 
     % 输出与 eta 的 Spearman rho（按 |rho| 降序）
     rhoWithEta = R_spearman(1:nPred, end);
@@ -74,24 +76,47 @@ for cluster = 1:kOpt
         fprintf('  %-6s %+10.4f %10.2e  %s\n', varSymbols{i}, rho, p, significanceStars(p));
     end
 
-    % 导出 CSV
-    csvName = sprintf('pro2_spearman_cluster%d.csv', cluster);
-    writeCorrCSV(R_spearman, csvName, allSymbols);
-    fprintf('  已导出 %s\n', csvName);
+    % 导出 CSV（rho 矩阵 + p 值矩阵）
+    csvRho = sprintf('pro2_spearman_cluster%d_rho.csv', cluster);
+    csvPval = sprintf('pro2_spearman_cluster%d_pval.csv', cluster);
+    writeCorrCSV(R_spearman, csvRho, allSymbols);
+    writeCorrCSV(P_spearman, csvPval, allSymbols);
+    fprintf('  已导出 %s, %s\n', csvRho, csvPval);
 
-    % 热力图
-    fig = figure('Name', sprintf('Spearman - 工况 %d (n=%d)', cluster, n));
-    imagesc(R_spearman);
-    colormap(jet); colorbar; caxis([-1 1]);
+    % 热力图：显著格子 jet 色阶，不显著 (p>0.05) 涂灰
+    cmap = jet(256);
+    nV = nVars;
+    img = zeros(nV, nV, 3);
+    for ii = 1:nV
+        for jj = 1:nV
+            if P_spearman(ii,jj) > 0.05
+                img(ii, jj, :) = [0.65, 0.65, 0.65];
+            else
+                cidx = round((R_spearman(ii,jj) + 1) / 2 * 255) + 1;
+                cidx = max(1, min(256, cidx));
+                img(ii, jj, :) = cmap(cidx, :);
+            end
+        end
+    end
+    fig = figure('Name', sprintf('Spearman - 工况 %d (n=%d)', cluster, n), ...
+        'Position', [50, 50, 750, 650]);
+    image(img);
     set(gca, 'XTick', 1:nVars, 'XTickLabel', allSymbols, ...
              'YTick', 1:nVars, 'YTickLabel', allSymbols);
     xtickangle(45);
     axis equal tight;
+    % 手工 colorbar
+    colormap(jet); caxis([-1 1]); colorbar('Position', [0.92, 0.15, 0.03, 0.70]);
     for ii = 1:nVars
         for jj = 1:nVars
             if ii ~= jj
-                text(jj, ii, sprintf('%.2f', R_spearman(ii,jj)), ...
-                    'HorizontalAlignment', 'center', 'FontSize', 7);
+                t = sprintf('%.2f', R_spearman(ii,jj));
+                if P_spearman(ii,jj) <= 0.05
+                    t = [t, newline, significanceStars(P_spearman(ii,jj))];
+                else
+                    t = [t, newline, 'n.s.'];
+                end
+                text(jj, ii, t, 'HorizontalAlignment', 'center', 'FontSize', 8);
             end
         end
     end
@@ -113,13 +138,30 @@ clusterLabel = {
 
 figGrid = figure('Name', '分工况 Spearman 秩相关系数矩阵', ...
     'Position', [50, 50, 1200, 900]);
+cmap = jet(256);
 for row = 1:2
     for col = 1:2
         c = gridMap(row, col);
         subplot(2, 2, (row-1)*2 + col);
+        if isempty(R_clusters{c})
+            axis off; continue;
+        end
         R = R_clusters{c};
-        imagesc(R);
-        colormap(jet); colorbar; caxis([-1 1]);
+        P = P_clusters{c};
+        nV = nVars;
+        img = zeros(nV, nV, 3);
+        for ii = 1:nV
+            for jj = 1:nV
+                if P(ii,jj) > 0.05
+                    img(ii, jj, :) = [0.65, 0.65, 0.65];
+                else
+                    cidx = round((R(ii,jj) + 1) / 2 * 255) + 1;
+                    cidx = max(1, min(256, cidx));
+                    img(ii, jj, :) = cmap(cidx, :);
+                end
+            end
+        end
+        image(img);
         set(gca, 'XTick', 1:nVars, 'XTickLabel', allSymbols, ...
                  'YTick', 1:nVars, 'YTickLabel', allSymbols);
         xtickangle(45);
@@ -128,8 +170,13 @@ for row = 1:2
         for ii = 1:nVars
             for jj = 1:nVars
                 if ii ~= jj
-                    text(jj, ii, sprintf('%.2f', R(ii,jj)), ...
-                        'HorizontalAlignment', 'center', 'FontSize', 6);
+                    t = sprintf('%.2f', R(ii,jj));
+                    if P(ii,jj) <= 0.05
+                        t = [t, newline, significanceStars(P(ii,jj))];
+                    else
+                        t = [t, newline, 'n.s.'];
+                    end
+                    text(jj, ii, t, 'HorizontalAlignment', 'center', 'FontSize', 6);
                 end
             end
         end

@@ -6,9 +6,15 @@ function writeCorrCSV(R, filename, symbols)
         cellOut{1, i+1} = symbols{i};
         cellOut{i+1, 1} = symbols{i};
     end
+    vals = R(isfinite(R) & R ~= 0);
+    if isempty(vals) || min(abs(vals)) >= 1e-4
+        fmt = '%.4f';
+    else
+        fmt = '%.4e';
+    end
     for i = 1:n
         for j = 1:n
-            cellOut{i+1, j+1} = sprintf('%.4f', R(i,j));
+            cellOut{i+1, j+1} = sprintf(fmt, R(i,j));
         end
     end
     fid = fopen(filename, 'w');

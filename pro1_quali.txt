@@ -1,0 +1,92 @@
+正态性检验 (Jarque-Bera, H0: 正态分布, alpha=0.05)
+
+变量           偏度       峰度       p值      h  结论
+----------------------------------------------------------
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+H        -0.079   +1.670   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+C        -0.258   +1.790   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+Q        -0.237   +1.986   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+U_1      -0.188   +2.098   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+U_2      -0.212   +2.124   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+U_3      -0.121   +2.282   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+U_4      -0.120   +2.260   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+T_1      -0.372   +2.643   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+T_2      -0.362   +2.645   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+T_3      -0.639   +2.909   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+T_4      -0.627   +2.886   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+P        -0.179   +1.831   0.0010      1  非正态
+[警告: P 小于最小列表值，将返回 0.001。] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('jbtest', 'D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m', 136)" style="font-weight:bold">jbtest</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\stats\stats\jbtest.m',136,0)">第 136 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro1_quali', 'E:\cumcm\duanwu\pro1_quali.m', 51)" style="font-weight:bold">pro1_quali</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro1_quali.m',51,0)">第 51 行</a>)] 
+\eta     -0.896   +2.796   0.0010      1  非正态
+
+0/13 个变量通过正态性检验
+大样本下 JB 检验过度敏感，改用 Spearman 秩相关（无分布假设）
+
+完整观测数: 9254 (去除 NaN 后)
+
+与 \eta 的 Spearman 相关
+
+变量     Spearman rho         p值
+------------------------------
+C         +0.9895   0.00e+00  ***
+T_1       -0.2360  2.37e-117  ***
+T_2       -0.2339  2.93e-115  ***
+T_3       -0.2271  1.49e-108  ***
+T_4       -0.2249  2.16e-106  ***
+P         +0.1899   6.80e-76  ***
+U_1       +0.1313   7.32e-37  ***
+H         -0.1268   1.87e-34  ***
+U_2       +0.1264   2.93e-34  ***
+U_3       -0.0520   5.47e-07  ***
+U_4       -0.0492   2.20e-06  ***
+Q         +0.0371   3.56e-04  ***
+
+Spearman: 单调依赖强度 (无分布假设)
+显著性: *** p<0.001  ** p<0.01  * p<0.05  n.s. p>=0.05
+
+变量间高相关对 (|rho|>0.7)
+
+  U_1 <-> U_2: rho = +0.803
+  U_1 <-> P: rho = +0.900
+  U_2 <-> P: rho = +0.900
+  U_3 <-> U_4: rho = +0.704
+注: 若存在强相关对，建立回归模型时需考虑共线性
+已导出 pro1_quali_spearman.csv 和 pro1_quali_spearman_p.csv
+
+图片已保存到 img\pro1_quali

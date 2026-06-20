@@ -1,0 +1,668 @@
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+分工况 Spearman 秩相关系数分析 (k=4)
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+聚类中心:
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+-- 工况 1 (n=2712) --
+if system_dependent('IsDebugMode')==1, dbstep; end
+  中心: H=119.7 C, C=44.02 g/Nm^3
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+if system_dependent('IsDebugMode')==1, dbstep; end
+  变量            rho         p值
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  C         +0.9991   0.00e+00  ***
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  T_2       -0.1378   5.69e-13  ***
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  T_1       -0.1270   3.19e-11  ***
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  U_3       -0.1167   1.09e-09  ***
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  U_4       -0.1114   5.91e-09  ***
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  T_3       -0.0483   1.20e-02  *  
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  U_1       +0.0188   3.28e-01  n.s.
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  P         +0.0183   3.40e-01  n.s.
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  T_4       -0.0182   3.43e-01  n.s.
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  U_2       +0.0142   4.60e-01  n.s.
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  H         +0.0108   5.74e-01  n.s.
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  Q         +0.0092   6.32e-01  n.s.
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  已导出 pro2_spearman_cluster1.csv
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+{错误使用 <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('saveas', 'D:\MATLAB\R2024b\toolbox\matlab\general\saveas.m', 60)" style="font-weight:bold">saveas</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\matlab\general\saveas.m',60,0)">第 60 行</a>)
+句柄无效。
+
+出错 <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('saveCurrent', 'E:\cumcm\duanwu\saveCurrent.m', 2)" style="font-weight:bold">saveCurrent</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\saveCurrent.m',2,0)">第 2 行</a>)
+    saveas(fig, fullfile(outDir, [name '.svg']));
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+出错 <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro2', 'E:\cumcm\duanwu\pro2.m', 121)" style="font-weight:bold">pro2</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',121,0)">第 121 行</a>)
+    saveCurrent(fig, sprintf('spearman_cluster%d', cluster), outDir);
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+pro2
+[警告: 未找到文件或者权限被拒绝] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro2', 'E:\cumcm\duanwu\pro2.m', 3)" style="font-weight:bold">pro2</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',3,0)">第 3 行</a>)] 
+分工况 Spearman 秩相关系数分析 (k=4)
+
+聚类中心:
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+
+-- 工况 1 (n=2712) --
+  中心: H=119.7 C, C=44.02 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9991   0.00e+00  ***
+  T_2       -0.1378   5.69e-13  ***
+  T_1       -0.1270   3.19e-11  ***
+  U_3       -0.1167   1.09e-09  ***
+  U_4       -0.1114   5.91e-09  ***
+  T_3       -0.0483   1.20e-02  *  
+  U_1       +0.0188   3.28e-01  n.s.
+  P         +0.0183   3.40e-01  n.s.
+  T_4       -0.0182   3.43e-01  n.s.
+  U_2       +0.0142   4.60e-01  n.s.
+  H         +0.0108   5.74e-01  n.s.
+  Q         +0.0092   6.32e-01  n.s.
+  已导出 pro2_spearman_cluster1.csv
+if system_dependent('IsDebugMode')==1, dbquit; end
+pro2
+[警告: 未找到文件或者权限被拒绝] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro2', 'E:\cumcm\duanwu\pro2.m', 3)" style="font-weight:bold">pro2</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',3,0)">第 3 行</a>)] 
+分工况 Spearman 秩相关系数分析 (k=4)
+
+聚类中心:
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+
+-- 工况 1 (n=2712) --
+  中心: H=119.7 C, C=44.02 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9991   0.00e+00  ***
+  T_2       -0.1378   5.69e-13  ***
+  T_1       -0.1270   3.19e-11  ***
+  U_3       -0.1167   1.09e-09  ***
+  U_4       -0.1114   5.91e-09  ***
+  T_3       -0.0483   1.20e-02  *  
+  U_1       +0.0188   3.28e-01  n.s.
+  P         +0.0183   3.40e-01  n.s.
+  T_4       -0.0182   3.43e-01  n.s.
+  U_2       +0.0142   4.60e-01  n.s.
+  H         +0.0108   5.74e-01  n.s.
+  Q         +0.0092   6.32e-01  n.s.
+  已导出 pro2_spearman_cluster1.csv
+if system_dependent('IsDebugMode')==1, dbstep; end
+<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',123,1)">123 </a>    fprintf('\n');
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+pro2
+[警告: 未找到文件或者权限被拒绝] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro2', 'E:\cumcm\duanwu\pro2.m', 3)" style="font-weight:bold">pro2</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',3,0)">第 3 行</a>)] 
+分工况 Spearman 秩相关系数分析 (k=4)
+
+聚类中心:
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+
+-- 工况 1 (n=2712) --
+  中心: H=119.7 C, C=44.02 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9991   0.00e+00  ***
+  T_2       -0.1378   5.69e-13  ***
+  T_1       -0.1270   3.19e-11  ***
+  U_3       -0.1167   1.09e-09  ***
+  U_4       -0.1114   5.91e-09  ***
+  T_3       -0.0483   1.20e-02  *  
+  U_1       +0.0188   3.28e-01  n.s.
+  P         +0.0183   3.40e-01  n.s.
+  T_4       -0.0182   3.43e-01  n.s.
+  U_2       +0.0142   4.60e-01  n.s.
+  H         +0.0108   5.74e-01  n.s.
+  Q         +0.0092   6.32e-01  n.s.
+  已导出 pro2_spearman_cluster1.csv
+[警告: 由于图窗无效，因而未完成所请求的打印。发生该情况的原因可能是在打印完毕前已将图
+窗关闭。] 
+[> 位置：alternatePrintPath
+位置: alternatePrintPath
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('print', 'D:\MATLAB\R2024b\toolbox\matlab\graphics\graphics\printing\print.m', 90)" style="font-weight:bold">print</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\matlab\graphics\graphics\printing\print.m',90,0)">第 90 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('saveas', 'D:\MATLAB\R2024b\toolbox\matlab\general\saveas.m', 181)" style="font-weight:bold">saveas</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\matlab\general\saveas.m',181,0)">第 181 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('saveCurrent', 'E:\cumcm\duanwu\saveCurrent.m', 3)" style="font-weight:bold">saveCurrent</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\saveCurrent.m',3,0)">第 3 行</a>)
+位置: <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro2', 'E:\cumcm\duanwu\pro2.m', 121)" style="font-weight:bold">pro2</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',121,0)">第 121 行</a>)] 
+{错误使用 <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('savefig', 'D:\MATLAB\R2024b\toolbox\matlab\graphics\graphics\objectsystem\savefig.m', 12)" style="font-weight:bold">savefig</a> (<a href="matlab: opentoline('D:\MATLAB\R2024b\toolbox\matlab\graphics\graphics\objectsystem\savefig.m',12,0)">第 12 行</a>)
+H 必须是有效图窗的句柄数组。
+
+出错 <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('saveCurrent', 'E:\cumcm\duanwu\saveCurrent.m', 4)" style="font-weight:bold">saveCurrent</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\saveCurrent.m',4,0)">第 4 行</a>)
+    savefig(fig, fullfile(outDir, [name '.fig']));
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+出错 <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro2', 'E:\cumcm\duanwu\pro2.m', 121)" style="font-weight:bold">pro2</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',121,0)">第 121 行</a>)
+    saveCurrent(fig, sprintf('spearman_cluster%d', cluster), outDir);
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+pro2
+[警告: 未找到文件或者权限被拒绝] 
+[> 位置：<a href="matlab:matlab.lang.internal.introspective.errorDocCallback('pro2', 'E:\cumcm\duanwu\pro2.m', 3)" style="font-weight:bold">pro2</a> (<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',3,0)">第 3 行</a>)] 
+分工况 Spearman 秩相关系数分析 (k=4)
+
+聚类中心:
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+
+-- 工况 1 (n=2712) --
+  中心: H=119.7 C, C=44.02 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9991   0.00e+00  ***
+  T_2       -0.1378   5.69e-13  ***
+  T_1       -0.1270   3.19e-11  ***
+  U_3       -0.1167   1.09e-09  ***
+  U_4       -0.1114   5.91e-09  ***
+  T_3       -0.0483   1.20e-02  *  
+  U_1       +0.0188   3.28e-01  n.s.
+  P         +0.0183   3.40e-01  n.s.
+  T_4       -0.0182   3.43e-01  n.s.
+  U_2       +0.0142   4.60e-01  n.s.
+  H         +0.0108   5.74e-01  n.s.
+  Q         +0.0092   6.32e-01  n.s.
+  已导出 pro2_spearman_cluster1.csv
+<a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',123,1)">123 </a>    fprintf('\n');
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+分工况 Spearman 秩相关系数分析 (k=4)
+
+聚类中心:
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+
+-- 工况 1 (n=2712) --
+  中心: H=119.7 C, C=44.02 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9991   0.00e+00  ***
+  T_2       -0.1378   5.69e-13  ***
+  T_1       -0.1270   3.19e-11  ***
+  U_3       -0.1167   1.09e-09  ***
+  U_4       -0.1114   5.91e-09  ***
+  T_3       -0.0483   1.20e-02  *  
+  U_1       +0.0188   3.28e-01  n.s.
+  P         +0.0183   3.40e-01  n.s.
+  T_4       -0.0182   3.43e-01  n.s.
+  U_2       +0.0142   4.60e-01  n.s.
+  H         +0.0108   5.74e-01  n.s.
+  Q         +0.0092   6.32e-01  n.s.
+  已导出 pro2_spearman_cluster1.csv
+
+-- 工况 2 (n=2072) --
+  中心: H=130.8 C, C=27.07 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9997   0.00e+00  ***
+  Q         +0.2905   1.37e-41  ***
+  H         -0.2671   3.46e-35  ***
+  U_4       +0.1647   4.56e-14  ***
+  T_4       -0.1408   1.22e-10  ***
+  U_3       +0.1249   1.18e-08  ***
+  P         +0.0924   2.52e-05  ***
+  T_3       -0.0707   1.27e-03  ** 
+  T_2       +0.0678   2.03e-03  ** 
+  U_1       +0.0675   2.10e-03  ** 
+  U_2       +0.0655   2.87e-03  ** 
+  T_1       +0.0610   5.46e-03  ** 
+  已导出 pro2_spearman_cluster2.csv
+
+-- 工况 3 (n=1778) --
+  中心: H=120.6 C, C=27.37 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9998   0.00e+00  ***
+  P         -0.5617  2.12e-148  ***
+  U_1       -0.5132  4.78e-120  ***
+  U_2       -0.5075  5.46e-117  ***
+  Q         -0.4092   9.44e-73  ***
+  U_4       -0.3765   5.66e-61  ***
+  U_3       -0.3530   2.45e-53  ***
+  T_1       -0.2171   2.12e-20  ***
+  T_3       +0.2031   5.30e-18  ***
+  T_2       -0.1981   3.37e-17  ***
+  H         -0.1758   8.17e-14  ***
+  T_4       +0.1687   8.00e-13  ***
+  已导出 pro2_spearman_cluster3.csv
+
+-- 工况 4 (n=2646) --
+  中心: H=130.4 C, C=42.40 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9995   0.00e+00  ***
+  H         +0.3494   8.17e-77  ***
+  P         +0.2809   3.69e-49  ***
+  T_4       -0.2735   1.34e-46  ***
+  T_3       -0.2687   5.27e-45  ***
+  U_1       +0.2672   1.65e-44  ***
+  U_2       +0.2558   8.17e-41  ***
+  U_3       +0.2294   6.11e-33  ***
+  U_4       +0.2235   2.60e-31  ***
+  Q         +0.1792   1.54e-20  ***
+  T_2       -0.0821   2.38e-05  ***
+  T_1       -0.0647   8.72e-04  ***
+  已导出 pro2_spearman_cluster4.csv
+
+显著性: *** p<0.001  ** p<0.01  * p<0.05  n.s. p>=0.05
+分工况 Spearman 秩相关系数分析 (k=4)
+
+聚类中心:
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+
+-- 工况 1 (n=2712) --
+  中心: H=119.7 C, C=44.02 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9991   0.00e+00  ***
+  T_2       -0.1378   5.69e-13  ***
+  T_1       -0.1270   3.19e-11  ***
+  U_3       -0.1167   1.09e-09  ***
+  U_4       -0.1114   5.91e-09  ***
+  T_3       -0.0483   1.20e-02  *  
+  U_1       +0.0188   3.28e-01  n.s.
+  P         +0.0183   3.40e-01  n.s.
+  T_4       -0.0182   3.43e-01  n.s.
+  U_2       +0.0142   4.60e-01  n.s.
+  H         +0.0108   5.74e-01  n.s.
+  Q         +0.0092   6.32e-01  n.s.
+  已导出 pro2_spearman_cluster1.csv
+
+-- 工况 2 (n=2072) --
+  中心: H=130.8 C, C=27.07 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9997   0.00e+00  ***
+  Q         +0.2905   1.37e-41  ***
+  H         -0.2671   3.46e-35  ***
+  U_4       +0.1647   4.56e-14  ***
+  T_4       -0.1408   1.22e-10  ***
+  U_3       +0.1249   1.18e-08  ***
+  P         +0.0924   2.52e-05  ***
+  T_3       -0.0707   1.27e-03  ** 
+  T_2       +0.0678   2.03e-03  ** 
+  U_1       +0.0675   2.10e-03  ** 
+  U_2       +0.0655   2.87e-03  ** 
+  T_1       +0.0610   5.46e-03  ** 
+  已导出 pro2_spearman_cluster2.csv
+
+-- 工况 3 (n=1778) --
+  中心: H=120.6 C, C=27.37 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9998   0.00e+00  ***
+  P         -0.5617  2.12e-148  ***
+  U_1       -0.5132  4.78e-120  ***
+  U_2       -0.5075  5.46e-117  ***
+  Q         -0.4092   9.44e-73  ***
+  U_4       -0.3765   5.66e-61  ***
+  U_3       -0.3530   2.45e-53  ***
+  T_1       -0.2171   2.12e-20  ***
+  T_3       +0.2031   5.30e-18  ***
+  T_2       -0.1981   3.37e-17  ***
+  H         -0.1758   8.17e-14  ***
+  T_4       +0.1687   8.00e-13  ***
+  已导出 pro2_spearman_cluster3.csv
+
+-- 工况 4 (n=2646) --
+  中心: H=130.4 C, C=42.40 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9995   0.00e+00  ***
+  H         +0.3494   8.17e-77  ***
+  P         +0.2809   3.69e-49  ***
+  T_4       -0.2735   1.34e-46  ***
+  T_3       -0.2687   5.27e-45  ***
+  U_1       +0.2672   1.65e-44  ***
+  U_2       +0.2558   8.17e-41  ***
+  U_3       +0.2294   6.11e-33  ***
+  U_4       +0.2235   2.60e-31  ***
+  Q         +0.1792   1.54e-20  ***
+  T_2       -0.0821   2.38e-05  ***
+  T_1       -0.0647   8.72e-04  ***
+  已导出 pro2_spearman_cluster4.csv
+
+显著性: *** p<0.001  ** p<0.01  * p<0.05  n.s. p>=0.05
+分工况 Spearman 秩相关系数分析 (k=4)
+
+聚类中心:
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+
+-- 工况 1 (n=2712) --
+  中心: H=119.7 C, C=44.02 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9991   0.00e+00  ***
+  T_2       -0.1378   5.69e-13  ***
+  T_1       -0.1270   3.19e-11  ***
+  U_3       -0.1167   1.09e-09  ***
+  U_4       -0.1114   5.91e-09  ***
+  T_3       -0.0483   1.20e-02  *  
+  U_1       +0.0188   3.28e-01  n.s.
+  P         +0.0183   3.40e-01  n.s.
+  T_4       -0.0182   3.43e-01  n.s.
+  U_2       +0.0142   4.60e-01  n.s.
+  H         +0.0108   5.74e-01  n.s.
+  Q         +0.0092   6.32e-01  n.s.
+  已导出 pro2_spearman_cluster1.csv
+
+-- 工况 2 (n=2072) --
+  中心: H=130.8 C, C=27.07 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9997   0.00e+00  ***
+  Q         +0.2905   1.37e-41  ***
+  H         -0.2671   3.46e-35  ***
+  U_4       +0.1647   4.56e-14  ***
+  T_4       -0.1408   1.22e-10  ***
+  U_3       +0.1249   1.18e-08  ***
+  P         +0.0924   2.52e-05  ***
+  T_3       -0.0707   1.27e-03  ** 
+  T_2       +0.0678   2.03e-03  ** 
+  U_1       +0.0675   2.10e-03  ** 
+  U_2       +0.0655   2.87e-03  ** 
+  T_1       +0.0610   5.46e-03  ** 
+  已导出 pro2_spearman_cluster2.csv
+
+-- 工况 3 (n=1778) --
+  中心: H=120.6 C, C=27.37 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9998   0.00e+00  ***
+  P         -0.5617  2.12e-148  ***
+  U_1       -0.5132  4.78e-120  ***
+  U_2       -0.5075  5.46e-117  ***
+  Q         -0.4092   9.44e-73  ***
+  U_4       -0.3765   5.66e-61  ***
+  U_3       -0.3530   2.45e-53  ***
+  T_1       -0.2171   2.12e-20  ***
+  T_3       +0.2031   5.30e-18  ***
+  T_2       -0.1981   3.37e-17  ***
+  H         -0.1758   8.17e-14  ***
+  T_4       +0.1687   8.00e-13  ***
+  已导出 pro2_spearman_cluster3.csv
+
+-- 工况 4 (n=2646) --
+  中心: H=130.4 C, C=42.40 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9995   0.00e+00  ***
+  H         +0.3494   8.17e-77  ***
+  P         +0.2809   3.69e-49  ***
+  T_4       -0.2735   1.34e-46  ***
+  T_3       -0.2687   5.27e-45  ***
+  U_1       +0.2672   1.65e-44  ***
+  U_2       +0.2558   8.17e-41  ***
+  U_3       +0.2294   6.11e-33  ***
+  U_4       +0.2235   2.60e-31  ***
+  Q         +0.1792   1.54e-20  ***
+  T_2       -0.0821   2.38e-05  ***
+  T_1       -0.0647   8.72e-04  ***
+  已导出 pro2_spearman_cluster4.csv
+
+显著性: *** p<0.001  ** p<0.01  * p<0.05  n.s. p>=0.05
+分工况 Spearman 秩相关系数分析 (k=4)
+
+聚类中心:
+  工况 1: H=119.7 C, C=44.02 g/Nm^3
+  工况 2: H=130.8 C, C=27.07 g/Nm^3
+  工况 3: H=120.6 C, C=27.37 g/Nm^3
+  工况 4: H=130.4 C, C=42.40 g/Nm^3
+
+-- 工况 1 (n=2712) --
+  中心: H=119.7 C, C=44.02 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9991   0.00e+00  ***
+  T_2       -0.1378   5.69e-13  ***
+  T_1       -0.1270   3.19e-11  ***
+  U_3       -0.1167   1.09e-09  ***
+  U_4       -0.1114   5.91e-09  ***
+  T_3       -0.0483   1.20e-02  *  
+  U_1       +0.0188   3.28e-01  n.s.
+  P         +0.0183   3.40e-01  n.s.
+  T_4       -0.0182   3.43e-01  n.s.
+  U_2       +0.0142   4.60e-01  n.s.
+  H         +0.0108   5.74e-01  n.s.
+  Q         +0.0092   6.32e-01  n.s.
+  已导出 pro2_spearman_cluster1_rho.csv, pro2_spearman_cluster1_pval.csv
+
+-- 工况 2 (n=2072) --
+  中心: H=130.8 C, C=27.07 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9997   0.00e+00  ***
+  Q         +0.2905   1.37e-41  ***
+  H         -0.2671   3.46e-35  ***
+  U_4       +0.1647   4.56e-14  ***
+  T_4       -0.1408   1.22e-10  ***
+  U_3       +0.1249   1.18e-08  ***
+  P         +0.0924   2.52e-05  ***
+  T_3       -0.0707   1.27e-03  ** 
+  T_2       +0.0678   2.03e-03  ** 
+  U_1       +0.0675   2.10e-03  ** 
+  U_2       +0.0655   2.87e-03  ** 
+  T_1       +0.0610   5.46e-03  ** 
+  已导出 pro2_spearman_cluster2_rho.csv, pro2_spearman_cluster2_pval.csv
+
+-- 工况 3 (n=1778) --
+  中心: H=120.6 C, C=27.37 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9998   0.00e+00  ***
+  P         -0.5617  2.12e-148  ***
+  U_1       -0.5132  4.78e-120  ***
+  U_2       -0.5075  5.46e-117  ***
+  Q         -0.4092   9.44e-73  ***
+  U_4       -0.3765   5.66e-61  ***
+  U_3       -0.3530   2.45e-53  ***
+  T_1       -0.2171   2.12e-20  ***
+  T_3       +0.2031   5.30e-18  ***
+  T_2       -0.1981   3.37e-17  ***
+  H         -0.1758   8.17e-14  ***
+  T_4       +0.1687   8.00e-13  ***
+  已导出 pro2_spearman_cluster3_rho.csv, pro2_spearman_cluster3_pval.csv
+
+-- 工况 4 (n=2646) --
+  中心: H=130.4 C, C=42.40 g/Nm^3
+  与 \eta 的 Spearman 相关 (|rho| 降序):
+  变量            rho         p值
+  C         +0.9995   0.00e+00  ***
+  H         +0.3494   8.17e-77  ***
+  P         +0.2809   3.69e-49  ***
+  T_4       -0.2735   1.34e-46  ***
+  T_3       -0.2687   5.27e-45  ***
+  U_1       +0.2672   1.65e-44  ***
+  U_2       +0.2558   8.17e-41  ***
+  U_3       +0.2294   6.11e-33  ***
+  U_4       +0.2235   2.60e-31  ***
+  Q         +0.1792   1.54e-20  ***
+  T_2       -0.0821   2.38e-05  ***
+  T_1       -0.0647   8.72e-04  ***
+  已导出 pro2_spearman_cluster4_rho.csv, pro2_spearman_cluster4_pval.csv
+
+显著性: *** p<0.001  ** p<0.01  * p<0.05  n.s. p>=0.05
