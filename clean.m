@@ -27,7 +27,19 @@ for i = 1:nVar
     beta = X(ok,:) \ y(ok);
     y_fit = X * beta;
     res = y - y_fit;
-    sigma = std(res(ok));
+    % 迭代重拟合：剔除极端异常后重估周期基线，避免拟合被异常段拉偏
+    sigma0 = std(res(ok));
+    bad_init = abs(res) > 3 * sigma0;          % 标记离群，用于重拟合剔除
+    ok2 = ok & ~bad_init;
+    if sum(ok2) > 2 * numel(beta)              % 自由度足够才重拟合
+        beta = X(ok2,:) \ y(ok2);
+        y_fit = X * beta;
+        res = y - y_fit;
+    end
+    sigma = std(res(ok2));
+    if isnan(sigma) || sigma == 0
+        sigma = sigma0;
+    end
     if sigma > 0
         z = res / sigma;
     else
@@ -38,7 +50,6 @@ for i = 1:nVar
     % 滑动窗内平均 |z|，标记连续异常
     mov_abs_z = movmean(abs(z), win);
     bad_i = mov_abs_z > 2.5;
-    bad_i = imdilate(bad_i, ones(win, 1));  % 膨胀确保整段覆盖
     nBad = sum(bad_i);
     if nBad > 0
         fprintf('  %-18s  异常点: %6d / %d  (%.1f%%)\n', varNames{i}, nBad, n, 100*nBad/n);
@@ -65,34 +76,36 @@ writetable(data_clean, 'dc.csv');
 fprintf('已保存 dc.mat 和 dc.csv，清洗后 %d 行\n', height(data_clean));
 
 %% ===== 重新绘图，保存到 img\clean\ =====
-outDir = fullfile('img', 'clean');
-if ~exist(outDir, 'dir')
-    mkdir(outDir);
-end
+% 这里先注释掉
 
-t_clean = datetime(data_clean.timestamp);
-varNames_plot = data_clean.Properties.VariableNames(2:end);
-labels = {'Temp_C (℃)', 'C_{in} (g/Nm³)', 'Q (Nm³/h)', ...
-          'U_1 (kV)', 'U_2 (kV)', 'U_3 (kV)', 'U_4 (kV)', ...
-          'T_1 (s)', 'T_2 (s)', 'T_3 (s)', 'T_4 (s)', ...
-          'C_{out} (mg/Nm³)', 'P_{total} (kW)', ...
-          '净化量 (g/Nm³)', '除尘效率 (%)'};
+% outDir = fullfile('img', 'clean');
+% if ~exist(outDir, 'dir')
+%     mkdir(outDir);
+% end
 
-% 清洗后各变量独立图
-for i = 1:numel(varNames_plot)
-    fig = figure('Name', ['清洗后 - ', labels{i}]);
-    scatter(t_clean, data_clean.(varNames_plot{i}), 2, 'filled');
-    xlabel('时间');
-    ylabel(labels{i});
-    grid on;
-    xtickformat('MM-dd HH:mm');
+% t_clean = datetime(data_clean.timestamp);
+% varNames_plot = data_clean.Properties.VariableNames(2:end);
+% labels = {'Temp_C (℃)', 'C_{in} (g/Nm³)', 'Q (Nm³/h)', ...
+%           'U_1 (kV)', 'U_2 (kV)', 'U_3 (kV)', 'U_4 (kV)', ...
+%           'T_1 (s)', 'T_2 (s)', 'T_3 (s)', 'T_4 (s)', ...
+%           'C_{out} (mg/Nm³)', 'P_{total} (kW)', ...
+%           '净化量 (g/Nm³)', '除尘效率 (%)'};
 
-    saveas(fig, fullfile(outDir, [varNames_plot{i}, '.svg']));
-    saveas(fig, fullfile(outDir, [varNames_plot{i}, '.png']));
-    savefig(fig, fullfile(outDir, [varNames_plot{i}, '.fig']));
-end
+% % 清洗后各变量独立图
+% for i = 1:numel(varNames_plot)
+%     fig = figure('Name', ['清洗后 - ', labels{i}]);
+%     scatter(t_clean, data_clean.(varNames_plot{i}), 2, 'filled');
+%     xlabel('时间');
+%     ylabel(labels{i});
+%     grid on;
+%     xtickformat('MM-dd HH:mm');
 
-fprintf('图片已保存到 %s\n', outDir);
+%     saveas(fig, fullfile(outDir, [varNames_plot{i}, '.svg']));
+%     saveas(fig, fullfile(outDir, [varNames_plot{i}, '.png']));
+%     savefig(fig, fullfile(outDir, [varNames_plot{i}, '.fig']));
+% end
+
+% fprintf('图片已保存到 %s\n', outDir);
 
 %% ===== 诊断图：标出被删除的点及其删除原因 =====
 diagDir = fullfile('img', 'clean');
