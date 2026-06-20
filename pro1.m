@@ -1,6 +1,7 @@
 %% 对各变量（除 C_out）作单正弦函数拟合，周期由 FFT 自动确定
 clear;clc;close all;
-diary("pro1.txt");
+if isfile('pro1.txt'), delete('pro1.txt'); end
+diary('pro1.txt');
 
 load('dc.mat', 'data_clean');
 t = datetime(data_clean.timestamp);
@@ -62,13 +63,13 @@ for i = 1:numel(varNames)
 
     a0 = beta(1);
     A = sqrt(beta(2)^2 + beta(3)^2);
-    phi = atan2d(beta(3), beta(2));
+    phi = atan2(beta(3), beta(2));
 
     % CLI
     fprintf('─ %s ─────────────────────────────\n', lbl);
-    fprintf('  检测周期: %.1f h   振幅: %.4f   相位: %.1f°\n', T_use, A, phi);
+    fprintf('  检测周期: %.1f h   振幅: %.4f   相位: %.4f rad\n', T_use, A, phi);
     fprintf('  a0 = %.4f    R² = %.4f    RMSE = %.4f\n', a0, R2, RMSE);
-    fprintf('  y = %.4f + %.4f · sin(2πt/%.1f + %.1f°)\n\n', a0, A, T_use, phi);
+    fprintf('  y = %.4f + %.4f · sin(2πt/%.1f + %.4f rad)\n\n', a0, A, T_use, phi);
 
     % 图1：拟合叠加
     fig = figure('Name', sprintf('拟合 - %s', lbl));

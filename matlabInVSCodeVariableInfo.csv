@@ -1,0 +1,8 @@
+Name,Value,Class
+allFigsExist,1x1,logical
+cacheFile,1x11,char
+centers_C,4x1,double
+centers_H,4x1,double
+figNames,1x4,cell
+kOpt,4,double
+outDir,1x8,char
