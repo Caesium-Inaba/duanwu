@@ -30,5 +30,37 @@
 ├── pro2opt.m                        # 单目标网格搜索
 ├── dream.m                          # 证明现有装备不可能达标
 ├── pro2opt_lease.m                  # 双目标 Pareto
-└── opt_lease.mat                    # 双目标 Pareto 的结果
+└── pareto_frontier.mat                    # 双目标 Pareto 的 Pareto 前沿结果
 ```
+## 表
+| 文件类型 | 文件名称 | 功能 |
+|----------|----------|------|
+| MATLAB 脚本文件 | draw.m | 读取 CSV 并作各变量时序图 |
+| MATLAB 脚本文件 | clean.m | 数据清洗 |
+| 数据文件 | dc.csv | 清洗后的数据表 |
+| MATLAB 脚本文件 | pro1_quali.m | 正态性检验与 Spearman 相关矩阵 |
+| 数据文件 | pro1_quali_spearman.csv | Spearman 秩相关系数矩阵 |
+| 数据文件 | pro1_quali_spearman_p.csv | Spearman p 值矩阵 |
+| MATLAB 脚本文件 | pro1.m | 各变量时序变化规律拟合 |
+| MATLAB 函数文件 | writeCorrCSV.m | 相关系数矩阵写入 CSV 表 |
+| MATLAB 函数文件 | saveCurrent.m | 保存图窗为 svg + png + fig |
+| MATLAB 函数文件 | significanceStars.m | p 值 → 显著性星号 |
+| MATLAB 脚本文件 | pro2_cluster.m | K-means 聚类 |
+| 数据文件 | dkmeans.mat | K-means 聚类结果 |
+| MATLAB 脚本文件 | pro2.m | 四个工况各自的 Spearman 相关矩阵 |
+| 数据文件 | pro2_spearman_cluster1_rho.csv | 工况 1 的 Spearman ρ |
+| 数据文件 | pro2_spearman_cluster1_pval.csv | 工况 1 的 p 值 |
+| 数据文件 | pro2_spearman_cluster2_rho.csv | 工况 2 的 Spearman ρ |
+| 数据文件 | pro2_spearman_cluster2_pval.csv | 工况 2 的 p 值 |
+| 数据文件 | pro2_spearman_cluster3_rho.csv | 工况 3 的 Spearman ρ |
+| 数据文件 | pro2_spearman_cluster3_pval.csv | 工况 3 的 p 值 |
+| 数据文件 | pro2_spearman_cluster4_rho.csv | 工况 4 的 Spearman ρ |
+| 数据文件 | pro2_spearman_cluster4_pval.csv | 工况 4 的 p 值 |
+| MATLAB 脚本文件 | pro2RF.m | 构建随机森林模型 |
+| 数据文件 | rf_models.mat | pro2RF.m 输出|
+| MATLAB 脚本文件 | pro2poly.m | 构建二次多项式回归模型 |
+| 数据文件 | poly_models.mat | pro2poly.m 输出|
+| MATLAB 脚本文件 | pro2opt.m | 单目标网格搜索 |
+| MATLAB 脚本文件 | dream.m | 证明现有装备不可能达标 |
+| MATLAB 脚本文件 | pro2opt_lease.m | 双目标 Pareto |
+| 数据文件 | pareto_frontier.mat | 双目标 Pareto 的 Pareto 前沿结果 |

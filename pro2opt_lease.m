@@ -159,8 +159,28 @@ end
 fprintf('\n完成。\n');
 
 %% ============================================================
+%%  精简结果：去掉 *_all 网格点，只保留 Pareto 前沿
+%% ============================================================
+results_frontier = stripResults(results);
+save('pareto_frontier.mat', 'results_frontier');
+fprintf('已保存 pareto_frontier.mat（仅 Pareto 前沿点，不含网格候选）。\n');
+
+%% ============================================================
 %%  局部函数
 %% ============================================================
+
+function results_frontier = stripResults(results)
+    % 从 results 中去掉 *_all 网格候选点字段，仅保留 Pareto 前沿
+    kOpt = length(results);
+    results_frontier = cell(kOpt, 1);
+    dropFields = {'U1_all', 'U2_all', 'T1_all', 'T2_all', 'P_all', 'Cout_all'};
+    for k = 1:kOpt
+        r = results{k};
+        if isempty(r), continue; end
+        r = rmfield(r, intersect(fieldnames(r), dropFields));
+        results_frontier{k} = r;
+    end
+end
 
 function pareto_mask = nonDominated(P_vals, C_vals)
     % 双目标最小化非支配排序，O(n log n)

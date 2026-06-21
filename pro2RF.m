@@ -1,6 +1,5 @@
 %% 第二问：随机森林建模
 %  f: η = f(H, C, Q, Ū₁, Ū₂, T̄₁, T̄₂)  全局 RF
-%  gₖ: P = gₖ(Ū₁, Ū₂, T̄₁, T̄₂)         分工况 RF, k=1..4
 clear;clc;close all;
 
 if isfile('pro2RF.txt'), delete('pro2RF.txt'); end
@@ -14,18 +13,12 @@ cacheFile = 'rf_models.mat';
 
 % 期望输出的所有 fig 文件
 figNames = {'f_pred_vs_actual', 'f_oob_residuals', 'f_importance'};
-for c = 1:4
-    figNames{end+1} = sprintf('g%d_pred_vs_actual', c);
-    figNames{end+1} = sprintf('g%d_importance', c);
-    figNames{end+1} = sprintf('g%d_oob_residuals', c);
-end
 
 allFigsExist = all(cellfun(@(n) isfile(fullfile(outDir, [n '.fig'])), figNames));
 cacheExists = isfile(cacheFile);
 
 %% 加载数据（无论如何都需要，变量合并和元数据来自这里）
 load('dc.mat', 'data_clean');
-load('dkmeans.mat', 'idx', 'kOpt', 'centers_H', 'centers_C');
 
 fprintf('===== 第二问：随机森林建模 =====\n\n');
 fprintf('数据总量: %d 行\n', height(data_clean));
@@ -39,11 +32,9 @@ Tbar2 = (data_clean.T3_s  + data_clean.T4_s)  / 2;
 H = data_clean.Temp_C;
 C_in = data_clean.C_in_gNm3;
 Q = data_clean.Q_Nm3h;
-P_total = data_clean.P_total_kW;
 eta = data_clean.eff;
 
 varNames_f = {'$H$','$C$','$Q$','$\bar{U}_1$','$\bar{U}_2$','$\bar{T}_1$','$\bar{T}_2$'};
-varNames_g = {'$\bar{U}_1$','$\bar{U}_2$','$\bar{T}_1$','$\bar{T}_2$'};
 nTrees = 200;
 
 
@@ -51,14 +42,14 @@ nTrees = 200;
 
 if allFigsExist
     % 情况 1：fig 全部存在，直接跳过
-    load(cacheFile, 'f_model', 'g_models');
+    load(cacheFile, 'f_model');
     R2_train_f = NaN; R2_f = NaN; deltaR2_f = NaN; RMSE_f = NaN;
     fprintf('检测到所有 fig 已存在，跳过训练。\n');
     fprintf('从 rf_models.mat 加载模型。\n');
 
 elseif cacheExists
     % 情况 2：rf_models.mat 存在但 fig 不完整 → 加载模型，重出图
-    load(cacheFile, 'f_model', 'g_models');
+    load(cacheFile, 'f_model');
     fprintf('检测到 rf_models.mat，加载模型并重新出图...\n');
 
     % 重算评估指标用于出图
@@ -83,9 +74,6 @@ elseif cacheExists
 
     % 出 f 图
     plotF_figs(f_model, y_test_f, y_pred_f, res_f, X_train_f, varNames_f, R2_f, RMSE_f, outDir, nTrees);
-    % 出 g 图
-    X_g_all = [Ubar1, Ubar2, Tbar1, Tbar2]; y_g_all = P_total;
-    plotG_figs(g_models, idx, kOpt, X_g_all, y_g_all, centers_H, centers_C, varNames_g, outDir, nTrees);
 
 else
     % 情况 3：从头训练
@@ -126,54 +114,9 @@ else
 
     plotF_figs(f_model, y_test_f, y_pred_f, res_f, X_train_f, varNames_f, R2_f, RMSE_f, outDir, nTrees);
 
-    %% gₖ 模型：P = gₖ(Ū₁, Ū₂, T̄₁, T̄₂)  分工况 RF
-    fprintf('\n========== g 模型：P 分工况 RF ==========\n');
-    X_g_all = [Ubar1, Ubar2, Tbar1, Tbar2]; y_g_all = P_total;
-    g_models = cell(kOpt, 1);
-
-    for cluster = 1:kOpt
-        fprintf('\n-- 工况 %d (H=%.1f, C=%.2f) --\n', cluster, ...
-            centers_H(cluster), centers_C(cluster));
-        mask = idx == cluster;
-        X_cluster = X_g_all(mask, :); y_cluster = y_g_all(mask);
-        ok_g = all(isfinite(X_cluster), 2) & isfinite(y_cluster);
-        X_cluster = X_cluster(ok_g, :); y_cluster = y_cluster(ok_g);
-        n_g = length(y_cluster);
-        fprintf('  有效样本: %d\n', n_g);
-        if n_g < 50, fprintf('  样本过少，跳过\n'); continue; end
-
-        rng(42 + cluster);
-        nTrain_g = round(0.8 * n_g);
-        perm_g = randperm(n_g);
-        X_train_g = X_cluster(perm_g(1:nTrain_g), :); y_train_g = y_cluster(perm_g(1:nTrain_g));
-        X_test_g  = X_cluster(perm_g(nTrain_g+1:end), :); y_test_g  = y_cluster(perm_g(nTrain_g+1:end));
-        fprintf('  训练: %d, 测试: %d\n', nTrain_g, n_g - nTrain_g);
-
-        g_model = TreeBagger(nTrees, X_train_g, y_train_g, ...
-            'Method', 'regression', 'OOBPrediction', 'on', ...
-            'OOBPredictorImportance', 'on', 'MinLeafSize', 5);
-        g_models{cluster} = g_model;
-
-        y_pred_g = predict(g_model, X_test_g);
-        y_pred_train_g = predict(g_model, X_train_g);
-        R2_g = 1 - sum((y_test_g - y_pred_g).^2) / sum((y_test_g - mean(y_test_g)).^2);
-        R2_train_g = 1 - sum((y_train_g - y_pred_train_g).^2) / sum((y_train_g - mean(y_train_g)).^2);
-        deltaR2_g = R2_train_g - R2_g;
-        RMSE_g = sqrt(mean((y_test_g - y_pred_g).^2));
-        MAE_g = mean(abs(y_test_g - y_pred_g));
-        res_g = y_test_g - y_pred_g;
-
-        fprintf('  训练 R² = %.4f, 测试 R² = %.4f, ΔR² = %.4f', R2_train_g, R2_g, deltaR2_g);
-        if deltaR2_g > 0.03, fprintf(' ⚠ 过拟合风险'); end
-        fprintf('\n  RMSE = %.4f kW, MAE = %.4f kW\n', RMSE_g, MAE_g);
-    end
-
-    plotG_figs(g_models, idx, kOpt, X_g_all, y_g_all, centers_H, centers_C, varNames_g, outDir, nTrees);
-
     %% 保存模型
     fprintf('\n========== 保存模型 ==========\n');
-    save(cacheFile, 'f_model', 'g_models', 'varNames_f', 'varNames_g', 'nTrees', ...
-        'centers_H', 'centers_C', 'kOpt');
+    save(cacheFile, 'f_model', 'varNames_f');
     fprintf('已保存 %s\n', cacheFile);
 end
 
@@ -236,70 +179,3 @@ function plotF_figs(model, y_test, y_pred, res, X_train, varNames_f, R2, RMSE, o
     saveCurrent(fig, 'f_importance', outDir);
 end
 
-function plotG_figs(g_models, idx, kOpt, X_g_all, y_g_all, centers_H, centers_C, varNames_g, outDir, nTrees)
-    for cluster = 1:kOpt
-        g_model = g_models{cluster};
-        if isempty(g_model), continue; end
-        mask = idx == cluster;
-        X_k = X_g_all(mask, :); y_k = y_g_all(mask);
-        ok = all(isfinite(X_k), 2) & isfinite(y_k);
-        X_k = X_k(ok, :); y_k = y_k(ok);
-
-        rng(42 + cluster);
-        n_g = length(y_k);
-        nTrain_g = round(0.8 * n_g);
-        perm_g = randperm(n_g);
-        X_test_g = X_k(perm_g(nTrain_g+1:end), :); y_test_g = y_k(perm_g(nTrain_g+1:end));
-        X_train_g = X_k(perm_g(1:nTrain_g), :); y_train_g = y_k(perm_g(1:nTrain_g));
-
-        y_pred_g = predict(g_model, X_test_g);
-        y_pred_train_g = predict(g_model, X_train_g);
-        R2_g = 1 - sum((y_test_g - y_pred_g).^2) / sum((y_test_g - mean(y_test_g)).^2);
-        R2_train_g = 1 - sum((y_train_g - y_pred_train_g).^2) / sum((y_train_g - mean(y_train_g)).^2);
-        deltaR2_g = R2_train_g - R2_g;
-        RMSE_g = sqrt(mean((y_test_g - y_pred_g).^2));
-        MAE_g = mean(abs(y_test_g - y_pred_g));
-        res_g = y_test_g - y_pred_g;
-
-        % gₖ 图 1：预测 vs 实测
-        fig = figure('Name', sprintf('g%d 模型：P 预测 vs 实测', cluster), ...
-            'Position', [50, 50, 600, 550]);
-        scatter(y_test_g, y_pred_g, 8, [0.8 0.3 0.2], 'filled', 'MarkerFaceAlpha', 0.3);
-        hold on;
-        lims_g = [min([y_test_g; y_pred_g]), max([y_test_g; y_pred_g])];
-        plot(lims_g, lims_g, 'k--', 'LineWidth', 1); hold off;
-        xlabel('实测 $P$ (kW)'); ylabel('预测 $P$ (kW)');
-        text(0.05, 0.95, sprintf('R^2 = %.4f\nRMSE = %.4f\nMAE = %.4f', R2_g, RMSE_g, MAE_g), ...
-            'Units', 'normalized', 'VerticalAlignment', 'top', 'FontSize', 10);
-        grid on; axis equal tight;
-        saveCurrent(fig, sprintf('g%d_pred_vs_actual', cluster), outDir);
-
-        % gₖ 图 2：变量重要性
-        fig = figure('Name', sprintf('g%d 模型：变量重要性', cluster), ...
-            'Position', [150, 150, 500, 380]);
-        imp_g = g_model.OOBPermutedVarDeltaError;
-        [~, impOrd] = sort(imp_g, 'descend');
-        bar(imp_g(impOrd), 'FaceColor', [0.8 0.3 0.2]);
-        set(gca, 'XTickLabel', varNames_g(impOrd));
-        xtickangle(30);
-        ylabel('OOB 变量重要性 (\Delta MSE)'); grid on;
-        saveCurrent(fig, sprintf('g%d_importance', cluster), outDir);
-
-        % gₖ 图 3：OOB + 残差
-        fig = figure('Name', sprintf('g%d 模型：OOB Error 与残差分布', cluster), ...
-            'Position', [100, 100, 900, 400]);
-        subplot(1,2,1);
-        oobErr_g = oobError(g_model);
-        plot(1:nTrees, oobErr_g, 'r-', 'LineWidth', 1.2);
-        xlabel('树棵数'); ylabel('OOB MSE'); grid on;
-        subplot(1,2,2);
-        histogram(res_g, 30, 'FaceColor', [0.8 0.3 0.2], 'EdgeColor', 'none');
-        hold on; xline(0, 'k--', 'LineWidth', 1); hold off;
-        xlabel('残差 $P$ (kW)'); ylabel('频数');
-        mu_r = mean(res_g); sigma_r = std(res_g);
-        text(0.05, 0.95, sprintf('\\mu = %.4f\n\\sigma = %.4f', mu_r, sigma_r), ...
-            'Units', 'normalized', 'VerticalAlignment', 'top', 'FontSize', 9);
-        grid on;
-        saveCurrent(fig, sprintf('g%d_oob_residuals', cluster), outDir);
-    end
-end
