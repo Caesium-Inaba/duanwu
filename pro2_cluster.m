@@ -20,7 +20,7 @@ if allFigsExist
     % 情况1：fig 已存在，直接打开
     openCachedFigs();
     fprintf('从 img\\pro2\\ 加载已有图窗\n');
-    load(cacheFile, 'kOpt', 'centers_H', 'centers_C');
+    load(cacheFile, 'kOpt', 'centers_H', 'centers_C', 'H', 'C', 'idx', 'wcss', 'silAvg');
 
 elseif isfile(cacheFile)
     % 情况2：dkmeans.mat 有但 fig 不完整，load 数据后作图并存
@@ -88,6 +88,13 @@ fprintf('\n选用 k=%d\n', kOpt);
 fprintf('聚类中心（原始坐标）:\n');
 for j = 1:kOpt
     fprintf('  工况 %d: H=%.1f℃, C=%.2f g/Nm³\n', j, centers_H(j), centers_C(j));
+end
+fprintf('\n各聚类 H 和 C 的上下界:\n');
+for j = 1:kOpt
+    mask = idx == j;
+    H_k = H(mask); C_k = C(mask);
+    fprintf('  工况 %d: H ∈ [%.1f, %.1f]℃, C ∈ [%.2f, %.2f] g/Nm³  (n=%d)\n', ...
+        j, min(H_k), max(H_k), min(C_k), max(C_k), sum(mask));
 end
 
 %% ── 局部函数 ──

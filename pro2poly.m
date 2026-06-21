@@ -146,13 +146,23 @@ else
     fprintf('已保存 %s\n', cacheFile);
 end
 
+%% ============================================================
+%%  打印多项式系数（所有路径统一输出）
+%% ============================================================
+fprintf('\n========== 多项式系数 ==========\n');
+printPoly(f_mdl, varNames_f, '\eta');
+for k = 1:kOpt
+    if ~isempty(g_mdls{k})
+        printPoly(g_mdls{k}, varNames_g, sprintf('P (工况 %d)', k));
+    end
+end
+
 %% R² 汇总
 fprintf('\n========== R² 汇总 ==========\n');
-if ~allFigsExist
+if exist('R2_f', 'var')
     fprintf('f (η, poly):  训练R²=%.4f  测试R²=%.4f  Δ=%.4f  RMSE=%.4f\n', ...
         R2_train_f, R2_f, deltaR2_f, RMSE_f);
 end
-fprintf('(多项式系数及 p 值详见 diary)\n');
 
 diary off;
 fprintf('\n完成。\n');
@@ -262,4 +272,41 @@ function plotG_poly_figs(g_mdls, idx, kOpt, X_g_all, y_g_all, centers_H, centers
         grid on;
         saveCurrent(fig, sprintf('g%d_oob_residuals', cluster), outDir);
     end
+end
+
+function printPoly(mdl, varNames, yLabel)
+    % 打印多项式系数，将 x1,x2,... 映射回可读变量名
+    coefTbl = mdl.Coefficients;
+    rawNames = coefTbl.Row;  % '(Intercept)','x1','x2','x1:x2','x1^2',...
+    est   = coefTbl.Estimate;
+    se    = coefTbl.SE;
+    tStat = coefTbl.tStat;
+    pVal  = coefTbl.pValue;
+
+    % 映射：x1→var₁, x1^2→var₁², x1:x2→var₁·var₂
+    %   (fitlm 对矩阵输入总是用 x1,x2,... 命名，无需处理 LaTeX 命令字符)
+    readable = rawNames;
+    for i = length(varNames):-1:1
+        readable = regexprep(readable, ['\<x' num2str(i) '\>'], varNames{i});
+    end
+    readable = regexprep(readable, ':|\*', '·');    % 交互项
+    readable = regexprep(readable, '\^2', '²');     % 二次项
+    readable = regexprep(readable, '\(Intercept\)', '截距');
+    % 去掉 LaTeX $（CLI 输出不需要）
+    readable = regexprep(readable, '\$', '');
+
+    fprintf('\n--- %s ---\n', yLabel);
+    fprintf('%-32s %12s %10s %10s %10s\n', '项', '估计值', 'SE', 't', 'p');
+    fprintf('%s\n', repmat('-', 1, 78));
+    for r = 1:length(est)
+        stars = '';
+        if     pVal(r) < 0.001, stars = ' ***';
+        elseif pVal(r) < 0.01,  stars = ' **';
+        elseif pVal(r) < 0.05,  stars = ' *';
+        end
+        fprintf('%-28s %+12.6f %10.4f %+10.4f %10.2e%s\n', ...
+            readable{r}, est(r), se(r), tStat(r), pVal(r), stars);
+    end
+    fprintf('R² = %.4f,  RMSE = %.4f\n', mdl.Rsquared.Ordinary, mdl.RMSE);
+    fprintf('\n');
 end

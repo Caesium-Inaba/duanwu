@@ -2,6 +2,9 @@
 
 以上是第二问。
 
+deu:
+$$\eta = 1 - \exp\left(-\frac{A \cdot \bar{U}_1^{\alpha} \cdot \bar{U}_2^{\beta}}{Q} \cdot f(\bar{T}_1, \bar{T}_2)\right)$$
+
 ---
 
 ## 问题与回应
