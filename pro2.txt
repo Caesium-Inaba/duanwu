@@ -342,12 +342,12 @@ pro2
 <a href="matlab: opentoline('E:\cumcm\duanwu\pro2.m',123,1)">123 </a>    fprintf('\n');
 if system_dependent('IsDebugMode')==1, dbstep; end
 
-分工况 Spearman 秩相关系数分析 (k=4)
-
-聚类中心:
-  工况 1: H=119.7 C, C=44.02 g/Nm^3
-  工况 2: H=130.8 C, C=27.07 g/Nm^3
-  工况 3: H=120.6 C, C=27.37 g/Nm^3
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+close all
+pro2RF
+/Nm^3
   工况 4: H=130.4 C, C=42.40 g/Nm^3
 
 -- 工况 1 (n=2712) --
